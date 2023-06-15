@@ -6,12 +6,16 @@ const TodoList = ({ todo, handleComplete, handleDeleteTodo }) => {
         style={{ textDecoration: todo.completed ? "line-through" : "none" }}
       >
         {" "}
-        <h3>{todo.text}</h3>
-        <p>{todo.description}</p>
+        <div>
+        <h3>Title: {todo.text}</h3>
+        <p>Description:  {todo.description}</p>
+        </div>
+        <div>
         <button onClick={() => handleDeleteTodo(todo.id)}>delete</button>
         <button onClick={() => handleComplete(todo.id)}>
           {todo.completed ? "Incomplete" : "Complete"}
         </button>
+        </div>
       </li>
     </>
   );
